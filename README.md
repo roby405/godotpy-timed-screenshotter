@@ -11,7 +11,7 @@ Get all the imported libraries and tesseract too if you want it
 
 Modify in the python script the paths of the godot project and pytesseract if you want to use it (add the godot project in Documents if you didn't already)
 
-Change image resolution if you want
+Change image resolution if you want, but you have to change scale for sprite in godot project.
 
 After that, run the script and open the visual novel and let it run for a while
 
