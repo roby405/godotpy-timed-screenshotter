@@ -39,6 +39,8 @@ func _on_Button_pressed():
 		for i in [$"%pauseMenu", $"%quit", $"%save"]:
 			i.hide()
 		otherMenuOnScreen=0
+
+#if transitions but code is broken and looks bad anyway
 #	var tween = get_tree().create_tween()
 #	tween.tween_property($Sprite, "modulate", Color(1,1,1,0), .03)
 #	tween.tween_callback(self, "addNextSpriteBefore")
