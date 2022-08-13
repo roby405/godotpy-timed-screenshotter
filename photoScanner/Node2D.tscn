@@ -1,0 +1,586 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Node2D.gd" type="Script" id=1]
+[ext_resource path="res://images/prj1/FOT-Seurat Pro B.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://theme/MinimalUI.tres" type="Theme" id=3]
+[ext_resource path="res://theme/OpenSans-Regular.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 38
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.0980392, 0.0980392, 0.0980392, 1 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme = ExtResource( 3 )
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Node2D"]
+scale = Vector2( 2, 2 )
+centered = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="prevButton" type="Button" parent="HBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 958.0
+margin_bottom = 1080.0
+size_flags_horizontal = 3
+
+[node name="nextButton" type="Button" parent="HBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 962.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+size_flags_horizontal = 3
+
+[node name="Button2" type="Button" parent="."]
+anchor_left = 0.924
+anchor_top = 0.022
+anchor_right = 0.986
+anchor_bottom = 0.116
+margin_left = -0.0800781
+margin_top = 0.239998
+margin_right = -0.120117
+margin_bottom = -0.280006
+custom_fonts/font = SubResource( 1 )
+text = "OPT"
+
+[node name="pauseMenu" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_constants/margin_right = 200
+custom_constants/margin_top = 100
+custom_constants/margin_left = 200
+custom_constants/margin_bottom = 100
+
+[node name="p1" type="PanelContainer" parent="pauseMenu"]
+margin_left = 200.0
+margin_top = 100.0
+margin_right = 1720.0
+margin_bottom = 980.0
+
+[node name="MarginContainer" type="MarginContainer" parent="pauseMenu/p1"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1513.0
+margin_bottom = 873.0
+mouse_filter = 2
+custom_constants/margin_right = 200
+custom_constants/margin_top = 120
+custom_constants/margin_left = 200
+custom_constants/margin_bottom = 120
+
+[node name="VBoxContainer" type="VBoxContainer" parent="pauseMenu/p1/MarginContainer"]
+margin_left = 200.0
+margin_top = 120.0
+margin_right = 1306.0
+margin_bottom = 746.0
+mouse_filter = 2
+
+[node name="Button" type="Button" parent="pauseMenu/p1/MarginContainer/VBoxContainer"]
+margin_right = 1106.0
+margin_bottom = 206.0
+size_flags_vertical = 3
+text = "Save"
+
+[node name="Button2" type="Button" parent="pauseMenu/p1/MarginContainer/VBoxContainer"]
+margin_top = 210.0
+margin_right = 1106.0
+margin_bottom = 416.0
+size_flags_vertical = 3
+text = "Load"
+
+[node name="Button3" type="Button" parent="pauseMenu/p1/MarginContainer/VBoxContainer"]
+margin_top = 420.0
+margin_right = 1106.0
+margin_bottom = 626.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Quit"
+
+[node name="quit" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_constants/margin_right = 400
+custom_constants/margin_top = 250
+custom_constants/margin_left = 400
+custom_constants/margin_bottom = 250
+
+[node name="p2" type="PanelContainer" parent="quit"]
+margin_left = 400.0
+margin_top = 250.0
+margin_right = 1520.0
+margin_bottom = 830.0
+
+[node name="MarginContainer" type="MarginContainer" parent="quit/p2"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1113.0
+margin_bottom = 573.0
+mouse_filter = 2
+custom_constants/margin_right = 60
+custom_constants/margin_top = 100
+custom_constants/margin_left = 60
+custom_constants/margin_bottom = 60
+
+[node name="VBoxContainer" type="VBoxContainer" parent="quit/p2/MarginContainer"]
+margin_left = 60.0
+margin_top = 100.0
+margin_right = 1046.0
+margin_bottom = 506.0
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="quit/p2/MarginContainer/VBoxContainer"]
+margin_right = 986.0
+margin_bottom = 272.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.1
+custom_fonts/font = SubResource( 2 )
+text = "Are you sure you want to quit?"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="quit/p2/MarginContainer/VBoxContainer"]
+margin_top = 276.0
+margin_right = 986.0
+margin_bottom = 406.0
+mouse_filter = 2
+size_flags_vertical = 3
+custom_constants/separation = 170
+
+[node name="cancelQuit" type="Button" parent="quit/p2/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+margin_right = 408.0
+margin_bottom = 130.0
+size_flags_horizontal = 3
+custom_constants/hseparation = 70
+text = "No"
+
+[node name="confirmQuit" type="Button" parent="quit/p2/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+margin_left = 578.0
+margin_right = 986.0
+margin_bottom = 130.0
+size_flags_horizontal = 3
+custom_constants/hseparation = 70
+text = "Yes"
+
+[node name="save" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_constants/margin_right = 200
+custom_constants/margin_top = 120
+custom_constants/margin_left = 200
+custom_constants/margin_bottom = 120
+
+[node name="p3" type="PanelContainer" parent="save"]
+margin_left = 200.0
+margin_top = 120.0
+margin_right = 1720.0
+margin_bottom = 960.0
+
+[node name="MarginContainer" type="MarginContainer" parent="save/p3"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1513.0
+margin_bottom = 957.0
+mouse_filter = 2
+custom_constants/margin_right = 80
+custom_constants/margin_top = 40
+custom_constants/margin_left = 80
+custom_constants/margin_bottom = 40
+
+[node name="saveLoadFiles" type="GridContainer" parent="save/p3/MarginContainer"]
+unique_name_in_owner = true
+margin_left = 80.0
+margin_top = 40.0
+margin_right = 1426.0
+margin_bottom = 910.0
+mouse_filter = 0
+custom_constants/vseparation = 30
+custom_constants/hseparation = 10
+columns = 2
+
+[node name="Panel" type="Panel" parent="save/p3/MarginContainer/saveLoadFiles"]
+margin_right = 668.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 0, 150 )
+mouse_filter = 2
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="save/p3/MarginContainer/saveLoadFiles/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 0, 140 )
+mouse_filter = 2
+size_flags_horizontal = 3
+custom_constants/separation = 40
+
+[node name="Label" type="Label" parent="save/p3/MarginContainer/saveLoadFiles/Panel/HBoxContainer"]
+margin_top = 5.0
+margin_right = 439.0
+margin_bottom = 145.0
+rect_min_size = Vector2( 0, 140 )
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.33
+text = "No save yet"
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="save/p3/MarginContainer/saveLoadFiles/Panel/HBoxContainer"]
+margin_left = 479.0
+margin_right = 668.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 0, 140 )
+size_flags_horizontal = 3
+
+[node name="Panel9" type="Panel" parent="save/p3/MarginContainer/saveLoadFiles"]
+margin_left = 678.0
+margin_right = 1346.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 0, 150 )
+mouse_filter = 2
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="save/p3/MarginContainer/saveLoadFiles/Panel9"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 0, 140 )
+mouse_filter = 2
+size_flags_horizontal = 3
+custom_constants/separation = 40
+
+[node name="Label" type="Label" parent="save/p3/MarginContainer/saveLoadFiles/Panel9/HBoxContainer"]
+margin_top = 5.0
+margin_right = 439.0
+margin_bottom = 145.0
+rect_min_size = Vector2( 0, 140 )
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.33
+text = "No save yet"
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="save/p3/MarginContainer/saveLoadFiles/Panel9/HBoxContainer"]
+margin_left = 479.0
+margin_right = 668.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 0, 140 )
+size_flags_horizontal = 3
+
+[node name="Panel10" type="Panel" parent="save/p3/MarginContainer/saveLoadFiles"]
+margin_top = 180.0
+margin_right = 668.0
+margin_bottom = 330.0
+rect_min_size = Vector2( 0, 150 )
+mouse_filter = 2
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="save/p3/MarginContainer/saveLoadFiles/Panel10"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 0, 140 )
+mouse_filter = 2
+size_flags_horizontal = 3
+custom_constants/separation = 40
+
+[node name="Label" type="Label" parent="save/p3/MarginContainer/saveLoadFiles/Panel10/HBoxContainer"]
+margin_top = 5.0
+margin_right = 439.0
+margin_bottom = 145.0
+rect_min_size = Vector2( 0, 140 )
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.33
+text = "No save yet"
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="save/p3/MarginContainer/saveLoadFiles/Panel10/HBoxContainer"]
+margin_left = 479.0
+margin_right = 668.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 0, 140 )
+size_flags_horizontal = 3
+
+[node name="Panel2" type="Panel" parent="save/p3/MarginContainer/saveLoadFiles"]
+margin_left = 678.0
+margin_top = 180.0
+margin_right = 1346.0
+margin_bottom = 330.0
+rect_min_size = Vector2( 0, 150 )
+mouse_filter = 2
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="save/p3/MarginContainer/saveLoadFiles/Panel2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 0, 140 )
+mouse_filter = 2
+size_flags_horizontal = 3
+custom_constants/separation = 40
+
+[node name="Label" type="Label" parent="save/p3/MarginContainer/saveLoadFiles/Panel2/HBoxContainer"]
+margin_top = 5.0
+margin_right = 439.0
+margin_bottom = 145.0
+rect_min_size = Vector2( 0, 140 )
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.33
+text = "No save yet"
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="save/p3/MarginContainer/saveLoadFiles/Panel2/HBoxContainer"]
+margin_left = 479.0
+margin_right = 668.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 0, 140 )
+size_flags_horizontal = 3
+
+[node name="Panel3" type="Panel" parent="save/p3/MarginContainer/saveLoadFiles"]
+margin_top = 360.0
+margin_right = 668.0
+margin_bottom = 510.0
+rect_min_size = Vector2( 0, 150 )
+mouse_filter = 2
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="save/p3/MarginContainer/saveLoadFiles/Panel3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 0, 140 )
+mouse_filter = 2
+size_flags_horizontal = 3
+custom_constants/separation = 40
+
+[node name="Label" type="Label" parent="save/p3/MarginContainer/saveLoadFiles/Panel3/HBoxContainer"]
+margin_top = 5.0
+margin_right = 439.0
+margin_bottom = 145.0
+rect_min_size = Vector2( 0, 140 )
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.33
+text = "No save yet"
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="save/p3/MarginContainer/saveLoadFiles/Panel3/HBoxContainer"]
+margin_left = 479.0
+margin_right = 668.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 0, 140 )
+size_flags_horizontal = 3
+
+[node name="Panel4" type="Panel" parent="save/p3/MarginContainer/saveLoadFiles"]
+margin_left = 678.0
+margin_top = 360.0
+margin_right = 1346.0
+margin_bottom = 510.0
+rect_min_size = Vector2( 0, 150 )
+mouse_filter = 2
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="save/p3/MarginContainer/saveLoadFiles/Panel4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 0, 140 )
+mouse_filter = 2
+size_flags_horizontal = 3
+custom_constants/separation = 40
+
+[node name="Label" type="Label" parent="save/p3/MarginContainer/saveLoadFiles/Panel4/HBoxContainer"]
+margin_top = 5.0
+margin_right = 439.0
+margin_bottom = 145.0
+rect_min_size = Vector2( 0, 140 )
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.33
+text = "No save yet"
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="save/p3/MarginContainer/saveLoadFiles/Panel4/HBoxContainer"]
+margin_left = 479.0
+margin_right = 668.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 0, 140 )
+size_flags_horizontal = 3
+
+[node name="Panel5" type="Panel" parent="save/p3/MarginContainer/saveLoadFiles"]
+margin_top = 540.0
+margin_right = 668.0
+margin_bottom = 690.0
+rect_min_size = Vector2( 0, 150 )
+mouse_filter = 2
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="save/p3/MarginContainer/saveLoadFiles/Panel5"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 0, 140 )
+mouse_filter = 2
+size_flags_horizontal = 3
+custom_constants/separation = 40
+
+[node name="Label" type="Label" parent="save/p3/MarginContainer/saveLoadFiles/Panel5/HBoxContainer"]
+margin_top = 5.0
+margin_right = 439.0
+margin_bottom = 145.0
+rect_min_size = Vector2( 0, 140 )
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.33
+text = "No save yet"
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="save/p3/MarginContainer/saveLoadFiles/Panel5/HBoxContainer"]
+margin_left = 479.0
+margin_right = 668.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 0, 140 )
+size_flags_horizontal = 3
+
+[node name="Panel6" type="Panel" parent="save/p3/MarginContainer/saveLoadFiles"]
+margin_left = 678.0
+margin_top = 540.0
+margin_right = 1346.0
+margin_bottom = 690.0
+rect_min_size = Vector2( 0, 150 )
+mouse_filter = 2
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="save/p3/MarginContainer/saveLoadFiles/Panel6"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 0, 140 )
+mouse_filter = 2
+size_flags_horizontal = 3
+custom_constants/separation = 40
+
+[node name="Label" type="Label" parent="save/p3/MarginContainer/saveLoadFiles/Panel6/HBoxContainer"]
+margin_top = 5.0
+margin_right = 439.0
+margin_bottom = 145.0
+rect_min_size = Vector2( 0, 140 )
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.33
+text = "No save yet"
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="save/p3/MarginContainer/saveLoadFiles/Panel6/HBoxContainer"]
+margin_left = 479.0
+margin_right = 668.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 0, 140 )
+size_flags_horizontal = 3
+
+[node name="Panel7" type="Panel" parent="save/p3/MarginContainer/saveLoadFiles"]
+margin_top = 720.0
+margin_right = 668.0
+margin_bottom = 870.0
+rect_min_size = Vector2( 0, 150 )
+mouse_filter = 2
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="save/p3/MarginContainer/saveLoadFiles/Panel7"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 0, 140 )
+mouse_filter = 2
+size_flags_horizontal = 3
+custom_constants/separation = 40
+
+[node name="Label" type="Label" parent="save/p3/MarginContainer/saveLoadFiles/Panel7/HBoxContainer"]
+margin_top = 5.0
+margin_right = 439.0
+margin_bottom = 145.0
+rect_min_size = Vector2( 0, 140 )
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.33
+text = "No save yet"
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="save/p3/MarginContainer/saveLoadFiles/Panel7/HBoxContainer"]
+margin_left = 479.0
+margin_right = 668.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 0, 140 )
+size_flags_horizontal = 3
+
+[node name="Panel8" type="Panel" parent="save/p3/MarginContainer/saveLoadFiles"]
+margin_left = 678.0
+margin_top = 720.0
+margin_right = 1346.0
+margin_bottom = 870.0
+rect_min_size = Vector2( 0, 150 )
+mouse_filter = 2
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="save/p3/MarginContainer/saveLoadFiles/Panel8"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 0, 140 )
+mouse_filter = 2
+size_flags_horizontal = 3
+custom_constants/separation = 40
+
+[node name="Label" type="Label" parent="save/p3/MarginContainer/saveLoadFiles/Panel8/HBoxContainer"]
+margin_top = 5.0
+margin_right = 439.0
+margin_bottom = 145.0
+rect_min_size = Vector2( 0, 140 )
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.33
+text = "No save yet"
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="save/p3/MarginContainer/saveLoadFiles/Panel8/HBoxContainer"]
+margin_left = 479.0
+margin_right = 668.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 0, 140 )
+size_flags_horizontal = 3
+
+[connection signal="pressed" from="HBoxContainer/prevButton" to="Node2D" method="_on_prevButton_pressed"]
+[connection signal="pressed" from="HBoxContainer/nextButton" to="Node2D" method="_on_Button_pressed"]
+[connection signal="pressed" from="Button2" to="Node2D" method="_on_Button2_pressed"]
+[connection signal="pressed" from="pauseMenu/p1/MarginContainer/VBoxContainer/Button" to="Node2D" method="savebutt"]
+[connection signal="pressed" from="pauseMenu/p1/MarginContainer/VBoxContainer/Button2" to="Node2D" method="loadbutt"]
+[connection signal="pressed" from="pauseMenu/p1/MarginContainer/VBoxContainer/Button3" to="Node2D" method="quitButt"]
+[connection signal="pressed" from="quit/p2/MarginContainer/VBoxContainer/HBoxContainer/cancelQuit" to="Node2D" method="_on_cancelQuit_pressed"]
+[connection signal="pressed" from="quit/p2/MarginContainer/VBoxContainer/HBoxContainer/confirmQuit" to="Node2D" method="_on_confirmQuit_pressed"]
