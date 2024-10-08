@@ -1,9 +1,9 @@
 # godotpy-timed-screenshoter
-screenshot visual novels to create a very barebones port of the game for phones/pc without audio/animations/anything
+screenshot text games to create a very barebones port of the game for phones/pc without audio/animations/anything
 
 It's literally a screenshot reader.
 
-How it works: open a visual novel or something text based where you don't need to make any interaction.
+How it works: open a text game or something text based where you don't need to make any interaction.
 
 Set text speed or whatever you have at instant.
 
